@@ -1,0 +1,414 @@
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #d8b4fe 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #a855f7 0%, transparent 35%),
+        linear-gradient(135deg, #2e1065, #581c87, #3b0764);
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 0;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 25px;
+
+    padding: 45px;
+
+    margin-bottom: 35px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    text-align: center;
+}
+
+.heart {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.intro h1 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+.intro p {
+    font-size: 21px;
+
+    line-height: 1.7;
+}
+
+.small-text {
+    font-size: 16px !important;
+
+    opacity: 0.8;
+
+    margin-top: 15px;
+}
+
+.line {
+    width: 80px;
+    height: 3px;
+
+    background: #e9d5ff;
+
+    margin: 25px auto;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message h2,
+.relationship h2 {
+    font-size: 30px;
+
+    margin-bottom: 25px;
+
+    color: #f3e8ff;
+}
+
+.message p,
+.relationship p {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+
+    color: #f5f3ff;
+}
+
+
+/* =========================
+   RELATIONSHIP CARD
+========================= */
+
+.relationship {
+    position: relative;
+
+    text-align: center;
+}
+
+.quote {
+    font-size: 80px;
+
+    height: 50px;
+
+    color: #d8b4fe;
+
+    font-family: Georgia, serif;
+}
+
+.bottom {
+    margin-top: 10px;
+}
+
+.important {
+    font-size: 22px !important;
+
+    font-weight: 600;
+
+    color: #ffffff !important;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    padding: 20px;
+
+    border-radius: 15px;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+    text-align: center;
+
+    padding: 60px 20px 30px;
+}
+
+.big-heart {
+    font-size: 75px;
+
+    color: #f5d0fe;
+
+    animation: heartbeat 1.5s infinite;
+
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.final-message h1 {
+    font-size: 55px;
+
+    letter-spacing: 5px;
+
+    margin: 20px 0;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 15px rgba(216, 180, 254, 0.8),
+        0 0 30px rgba(168, 85, 247, 0.7);
+}
+
+.final-message p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    opacity: 0.9;
+}
+
+.signature {
+    margin-top: 25px;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.35;
+
+    animation: float 10s linear infinite;
+}
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(3) {
+    left: 45%;
+    animation-delay: 5s;
+}
+
+.hearts span:nth-child(4) {
+    left: 65%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(5) {
+    left: 80%;
+    animation-delay: 7s;
+}
+
+.hearts span:nth-child(6) {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.12);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.35;
+    }
+
+    90% {
+        opacity: 0.35;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+
+        padding: 35px 0;
+    }
+
+    .card {
+        padding: 30px 22px;
+
+        border-radius: 20px;
+    }
+
+    .intro h1 {
+        font-size: 29px;
+    }
+
+    .intro p {
+        font-size: 18px;
+    }
+
+    .message h2,
+    .relationship h2 {
+        font-size: 25px;
+    }
+
+    .message p,
+    .relationship p {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+    .important {
+        font-size: 18px !important;
+    }
+
+    .final-message {
+        padding-top: 35px;
+    }
+
+    .big-heart {
+        font-size: 60px;
+    }
+
+    .final-message h1 {
+        font-size: 38px;
+
+        letter-spacing: 3px;
+    }
+
+    .final-message p {
+        font-size: 16px;
+    }
+}
+
